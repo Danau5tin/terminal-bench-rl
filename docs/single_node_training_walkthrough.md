@@ -60,8 +60,8 @@ echo "IMPORTANT: Please log out and back in for the group changes to take effect
 
 ### 2. Clone and setup repo
 ```bash
-git clone --recurse-submodules https://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@github.com/Danau5tin/terminal_bench_training.git
-cd terminal_bench_training
+git clone --recurse-submodules https://github.com/Danau5tin/terminal-bench-rl.git
+cd terminal-bench-rl
 
 curl -LsSf https://astral.sh/uv/install.sh | sh
 source $HOME/.local/bin/env

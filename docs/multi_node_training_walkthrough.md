@@ -351,7 +351,7 @@ sudo apt install nvtop
 
 ## tmux - keep things in the bg
 ```bash
-cd ~/terminal_bench_training
+cd ~/terminal-bench-rl
 
 # Install tmux
 sudo apt-get update && sudo apt-get install -y tmux
