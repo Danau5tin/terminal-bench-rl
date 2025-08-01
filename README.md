@@ -2,10 +2,12 @@
 
 **TL;DR:** 
 - I successfully built stable RL training infrastructure that scales to 32x H100 GPUs across 4 bare metal nodes for training long-horizon terminal-based coding agents.
-- In doing so, I developed Terminal-Agent-Qwen3-32b to become the **highest scoring Qwen3 agent on [terminal-bench](https://github.com/laude-institute/terminal-bench)**. WITHOUT training! (currently under submission):
+- In doing so, I developed Terminal-Agent-Qwen3-32b to become the **highest scoring Qwen3 agent on [terminal-bench](https://github.com/laude-institute/terminal-bench)**. WITHOUT training!:
     - Unfortunately I am too GPU poor to train a SOTA coding agent 😅 (estimated £30k-£50k in compute required), but if anyone has the GPUs, this project should get you there!
 
 This project builds upon the [rLLM framework](https://github.com/rllm-org/rllm) developed by UC Berkeley Sky Lab, extending it with custom environments and infrastructure specifically designed for terminal-based agent training.
+
+![Terminal bench leaderboard](./readme_images/terminal_bench_leaderboard.png)
 
 ## 📚 Table of Contents
 
