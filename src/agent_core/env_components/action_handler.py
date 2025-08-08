@@ -48,6 +48,11 @@ def format_tool_output(tool_name: str, content: str) -> str:
 class ActionHandler:
     """Handles execution of different action types."""
     
+    @staticmethod
+    def truncate_content(content: str, max_length: int = 15) -> str:
+        """Truncate content for display to reduce tokens."""
+        return content[:max_length] + "..." if len(content) > max_length else content
+    
     def __init__(
         self,
         executor: CommandExecutor,
@@ -98,7 +103,8 @@ class ActionHandler:
             return format_tool_output("todo", content), True
         
         task_id = self.todo_manager.add_task(action.content)
-        response = f"Added todo [{task_id}]: {action.content}"
+        truncated_content = self.truncate_content(action.content)
+        response = f"Added todo [{task_id}]: {truncated_content}"
         
         # Include todo list if requested
         if action.view_all:
@@ -172,7 +178,8 @@ class ActionHandler:
         for op in action.operations:
             if op.action == "add":
                 task_id = self.todo_manager.add_task(op.content)
-                results.append(f"Added todo [{task_id}]: {op.content}")
+                truncated_content = self.truncate_content(op.content)
+                results.append(f"Added todo [{task_id}]: {truncated_content}")
             
             elif op.action == "complete":
                 task = self.todo_manager.get_task(op.task_id)
@@ -183,7 +190,8 @@ class ActionHandler:
                     results.append(f"Task {op.task_id} is already completed")
                 else:
                     self.todo_manager.complete_task(op.task_id)
-                    results.append(f"Completed task [{op.task_id}]: {task['content']}")
+                    truncated_content = self.truncate_content(task['content'])
+                    results.append(f"Completed task [{op.task_id}]: {truncated_content}")
             
             elif op.action == "delete":
                 task = self.todo_manager.get_task(op.task_id)
@@ -192,7 +200,8 @@ class ActionHandler:
                     has_error = True
                 else:
                     self.todo_manager.delete_task(op.task_id)
-                    results.append(f"Deleted task [{op.task_id}]: {task['content']}")
+                    truncated_content = self.truncate_content(task['content'])
+                    results.append(f"Deleted task [{op.task_id}]: {truncated_content}")
             
             elif op.action == "view_all":
                 # This is handled after all operations
