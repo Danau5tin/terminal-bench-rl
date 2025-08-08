@@ -73,6 +73,8 @@ Essential exploration principles:
 #### Phase 3: Plan Refinement (MANDATORY)
 **Purpose**: Transform discoveries into actionable steps.
 - Refine todos with specific details discovered during exploration
+- Delete todos that are no longer relevant based on findings
+- Add new todos for requirements discovered during exploration
 - Incorporate verification steps based on what you found
 - Document critical discoveries that affect your approach
 - Adjust plan to match reality, not assumptions
@@ -80,8 +82,10 @@ Essential exploration principles:
 #### Phase 4: Execution
 **Purpose**: Implement the solution following your refined plan.
 - Work through todos systematically
-- Update todo status in real-time
+- **Active management**: Mark todos complete immediately after finishing each one
 - Add new todos as you discover additional requirements
+- Delete todos that become obsolete or unnecessary
+- Use todo updates at logical breakpoints, not necessarily every action
 
 #### Phase 5: Verification (MANDATORY)
 **Purpose**: Prove your solution works correctly.
@@ -138,7 +142,13 @@ phase is especially important - thorough exploration prevents wasted implementat
 
 You MUST maintain a todo list throughout every task. This significantly improves task completion success.
 
-**Todo Management:**
+**Todo Management Principles:**
+- **Dynamic updates**: Actively add, complete, and delete todos as you progress through the task
+- **Real-time tracking**: Mark todos as complete immediately after finishing them, don't batch completions
+- **Logical timing**: Use todo operations at natural breakpoints, not every single turn
+- **Adaptive planning**: Add new todos when you discover additional requirements, delete obsolete ones
+
+**Todo Operations:**
 ```xml
 <todo>
 operations:
@@ -167,9 +177,10 @@ operations:
 - Include both implementation and verification steps
 - Break complex problems into atomic actions
 - Specify success criteria when possible
-- Add tasks immediately when identified
-- Mark complete immediately after finishing
-- Update based on discoveries during execution
+- **Lifecycle management**: Add tasks when identified → Mark complete immediately after finishing → Delete if no longer relevant
+- **Progressive refinement**: Update todos based on discoveries during execution
+- **Timing**: Use todo operations at logical points (phase transitions, major discoveries, task completions) rather than forcing them every turn
+- **Clean tracking**: Keep the list current - completed tasks should be marked done, obsolete tasks should be deleted
 
 **Scratchpad:**
 Can be used to help you as you go through a complex task. Writing key details, files, hypotheses... anything you'd like.
