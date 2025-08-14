@@ -122,7 +122,7 @@ python dataset/tasks_to_parquet_converter.py
 
 ### 5. Launch training
 ```bash
-python scripts/launch_training.py test_8b_2_gpus  # Run `python scripts/launch_training.py list` for all configs
+python training_scripts/launch_training.py test_8b_2_gpus  # Run `python scripts/launch_training.py list` for all configs
 ```
 
 
