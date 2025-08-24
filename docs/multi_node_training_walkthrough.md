@@ -294,9 +294,9 @@ export HF_USERNAME="your-username"
 export LLM_JUDGE_NAME="anthropic/claude-sonnet-4-20250514"
 
 # Launch training
-python scripts/launch_training.py prod_32b_2x8_h100  # For 2 nodes
+python training_scripts/launch_training.py prod_32b_2x8_h100  # For 2 nodes
 # or
-python scripts/launch_training.py prod_32b_4x8_h100  # For 4 nodes
+python training_scripts/launch_training.py prod_32b_4x8_h100  # For 4 nodes
 ```
 
 ## Common Issues and Solutions
